@@ -1,5 +1,5 @@
-{% set version = "4.0.1" %}
-{% set md5 = "30d696bf909b8e13f991f8feac9c4a5e" %}
+{% set version = "4.2" %}
+{% set md5 = "1e09362a3f35d589f942359441050a6e" %}
 {% set pkgname = "coverage" %}
 
 package:
