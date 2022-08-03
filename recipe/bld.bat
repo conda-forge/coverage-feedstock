@@ -5,9 +5,12 @@ python -c "import os; print('_'.join(os.environ['PY_VER'].split('.')[0]))" > tem
 set /p PY_VER_MAJ=<temp.txt
 del temp.txt
 
-dir %PREFIX%\Scripts
-del %PREFIX%\Scripts\coverage-%PY_VER%-script.py
-del %PREFIX%\Scripts\coverage-%PY_VER%.exe
-del %PREFIX%\Scripts\coverage-%PY_VER%.exe.manifest
+del %BUILD_PREFIX%\Scripts\coverage%PY_VER_MAJ%-script.py
+del %BUILD_PREFIX%\Scripts\coverage%PY_VER_MAJ%.exe
+del %BUILD_PREFIX%\Scripts\coverage%PY_VER_MAJ%.exe.manifest
 
-dir /s "%PREFIX%\Scripts\coverage*"
+del %BUILD_PREFIX%\Scripts\coverage-%PY_VER%-script.py
+del %BUILD_PREFIX%\Scripts\coverage-%PY_VER%.exe
+del %BUILD_PREFIX%\Scripts\coverage-%PY_VER%.exe.manifest
+
+dir /s "%BUILD_PREFIX%\Scripts\coverage*"
