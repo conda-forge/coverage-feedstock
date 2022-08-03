@@ -9,8 +9,4 @@ del %PREFIX%\Scripts\coverage%PY_VER_MAJ%-script.py
 del %PREFIX%\Scripts\coverage%PY_VER_MAJ%.exe
 del %PREFIX%\Scripts\coverage%PY_VER_MAJ%.exe.manifest
 
-del %PREFIX%\Scripts\coverage-%PY_VER%-script.py
-del %PREFIX%\Scripts\coverage-%PY_VER%.exe
-del %PREFIX%\Scripts\coverage-%PY_VER%.exe.manifest
-
 dir /s "%PREFIX%\Scripts\coverage*"
