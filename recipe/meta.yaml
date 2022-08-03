@@ -19,7 +19,7 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
     - python
     - setuptools
   run:
