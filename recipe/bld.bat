@@ -1,7 +1,7 @@
-%python% setup.py install --single-version-externally-managed --record record.txt
+%PYTHON% setup.py install --single-version-externally-managed --record record.txt
 
 :: Remove versioned entrypoints.
-%python% -c "import os; print('_'.join(os.environ['PY_VER'].split('.')[0]))" > temp.txt
+%PYTHON% -c "import os; print('_'.join(os.environ['PY_VER'].split('.')[0]))" > temp.txt
 set /p PY_VER_MAJ=<temp.txt
 del temp.txt
 

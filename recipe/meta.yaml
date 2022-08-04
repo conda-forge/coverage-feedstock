@@ -24,6 +24,7 @@ requirements:
     - setuptools
   host:
     - python
+    - setuptools
   run:
     - python
 
