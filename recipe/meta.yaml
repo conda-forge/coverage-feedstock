@@ -1,4 +1,4 @@
-{% set version = "7.6.1" %}
+{% set version = "7.6.2" %}
 
 package:
   name: coverage
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/coverage/coverage-{{ version }}.tar.gz
-  sha256: 953510dfb7b12ab69d20135a0662397f077c59b1e6379a768e97c59d852ee51d
+  sha256: a5f81e68aa62bc0cfca04f7b19eaa8f9c826b53fc82ab9e2121976dc74f131f3
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<37]
   entry_points:
     - coverage = coverage.cmdline:main
@@ -23,6 +23,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     # extra dependency
