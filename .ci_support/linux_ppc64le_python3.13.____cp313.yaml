@@ -22,6 +22,8 @@ python:
 - 3.13.* *_cp313
 target_platform:
 - linux-ppc64le
+use_noarch:
+- 'false'
 zip_keys:
 - - c_stdlib_version
   - cdt_name
