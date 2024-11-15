@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/coverage/coverage-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/coverage/coverage-{{ version }}.tar.gz
   sha256: 6069188329fbe0a63876719099076261ce7a1adeea95bf236cff4353a8451b0d
 
 build:
-  number: 0
+  number: 1
   noarch: python  # [use_noarch]
   track_features:
     - coverage_no_compile                 # [use_noarch]
@@ -24,18 +24,19 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python         # [not use_noarch]
-    - python >=3.8   # [use_noarch]
+    - python {{ python_min }}   # [use_noarch]
     - pip
     - setuptools
   run:
     - python         # [not use_noarch]
-    - python >=3.8   # [use_noarch]
+    - python >={{ python_min }}   # [use_noarch]
     # extra dependency
     - tomli
 
 test:
   requires:
     - pip
+    - python {{ python_min }}  # [use_noarch]
   imports:
     - coverage
   commands:
