@@ -9,7 +9,7 @@ source:
   sha256: 8b2b8503edb06822c86d82fa64a4a5cb0760bb8f31f26e138ec743f422f37cfc
 
 build:
-  number: 0
+  number: 1
   noarch: python  # [use_noarch]
   track_features:
     - coverage_no_compile                 # [use_noarch]
