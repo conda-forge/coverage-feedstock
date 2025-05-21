@@ -25,4 +25,4 @@ python_min:
 target_platform:
 - linux-aarch64
 use_noarch:
-- 'false'
+- false
