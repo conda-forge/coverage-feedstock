@@ -1,4 +1,4 @@
-{% set version = "7.10.4" %}
+{% set version = "7.10.5" %}
 
 package:
   name: coverage
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/coverage/coverage-{{ version }}.tar.gz
-  sha256: 25f5130af6c8e7297fd14634955ba9e1697f47143f289e2a23284177c0061d27
+  sha256: f2e57716a78bc3ae80b2207be0709a3b2b63b9f2dcf9740ee6ac03588a2015b6
 
 build:
   number: 0
