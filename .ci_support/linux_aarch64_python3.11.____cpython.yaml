@@ -26,3 +26,6 @@ target_platform:
 - linux-aarch64
 use_noarch:
 - false
+zip_keys:
+- - python
+  - channel_sources
