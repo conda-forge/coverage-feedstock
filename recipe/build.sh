@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$use_noarch" == "true" ]]; then
-  sed -i.bak 's/compile_extension = True/compile_extension = False/g' setup.py
+  export COVERAGE_DISABLE_EXTENSION=1
 fi
 
 $PYTHON -m pip install . -vv
