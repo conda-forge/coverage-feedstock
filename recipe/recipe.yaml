@@ -1,0 +1,78 @@
+schema_version: 1
+
+context:
+  version: 7.12.0
+
+package:
+  name: coverage
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/c/coverage/coverage-${{ version }}.tar.gz
+  sha256: fc11e0a4e372cb5f282f16ef90d4a585034050ccda536451901abfb19a57f40c
+
+build:
+  number: 0
+  noarch: ${{ "python" if use_noarch }}
+  variant:
+    down_prioritize_variant: ${{ 1 if use_noarch else 0 }}
+  python:
+    entry_points:
+      - coverage = coverage.cmdline:main
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform and not use_noarch
+      then: python
+    - if: not use_noarch
+      then:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+  host:
+    - if: use_noarch
+      then: python ${{ python_min }}.*
+      else: python
+    - pip
+    - setuptools
+  run:
+    - if: use_noarch
+      then: python >=${{ python_min }}
+      else: python
+    # extra dependency
+    - tomli
+
+tests:
+  - if: use_noarch
+    then:
+      - python:
+          imports:
+            - coverage
+          python_version: ${{ python_min }}.*
+          pip_check: true
+      - script:
+          - coverage --help
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+    else:
+      - python:
+          imports:
+            - coverage
+          pip_check: true
+      - script:
+          - coverage --help
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE.txt
+  summary: Code coverage measurement for Python
+  homepage: https://coverage.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - thewchan
+    - ericmjl
+    - jakirkham
+    - ocefpaf
