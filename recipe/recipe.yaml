@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 7.15.4
+  version: 7.16.0
 
 package:
   name: coverage
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/coverage/coverage-${{ version }}.tar.gz
-  sha256: 0548198fff07ccf4faf469520bce1c2eceb1ce3e62891921138dec10907f9d00
+  sha256: 077f0964087883176ff6ab9b074694cae29f8c708273b13ca62c183c6ed716cd
 
 build:
-  number: 1
+  number: 0
   noarch: ${{ "python" if use_noarch }}
   variant:
     down_prioritize_variant: ${{ 1 if use_noarch else 0 }}
@@ -24,10 +24,10 @@ requirements:
   build:
     - if: build_platform != target_platform
       then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform and not use_noarch
-      then: python
     - if: not use_noarch
       then:
+        - if: build_platform != target_platform
+          then: python
         - ${{ compiler('c') }}
         - ${{ stdlib("c") }}
   host:
@@ -41,8 +41,6 @@ requirements:
       then: python >=${{ python_min }}
       else: python
     # extra dependency
-    - tomli
-
 tests:
   - if: use_noarch
     then:
