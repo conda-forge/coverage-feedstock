@@ -12,7 +12,7 @@ source:
   sha256: f83981779bcf9dfa06fa0a8d4cb43e0faec1706328ce07aa3e7b665b4ac0f210
 
 build:
-  number: 0
+  number: 1
   noarch: ${{ "python" if use_noarch }}
   variant:
     down_prioritize_variant: ${{ 1 if use_noarch else 0 }}
