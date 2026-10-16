@@ -5,6 +5,7 @@ migrator_ts: 1755739490
 __migrator:
     commit_message: Rebuild for python 3.15
     migration_number: 1
+    use_local: true
     operation: key_add
     primary_key: python
     ordering:
