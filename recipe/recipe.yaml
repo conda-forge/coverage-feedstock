@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "7.17.3"
+  version: "7.17.4"
 
 package:
   name: coverage
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/coverage/coverage-${{ version }}.tar.gz
-  sha256: 6695d1bb2a9a2fbd7806d69d78cf30f35eb0f65045da0ec5b5045242fadd6a78
+  sha256: 25ed180a4fb75b487509a4568acead1de41aefab8bedb06ac1ed5c14223fef97
 
 build:
   number: 0
